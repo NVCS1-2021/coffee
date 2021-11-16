@@ -33,4 +33,25 @@ public class PointOfSale
             done = true;
         }
     }
+    
+    public static void orderItem(String itemName, double price, String opt1Name, double opt1Price, String opt2Name, double opt2Price) {
+        double itemSubtotal = price;
+        boolean optionDone = false;
+        System.out.println(itemName+":");
+        while (!optionDone) {
+            System.out.println("Do you want "+opt1Name+" for $"+opt1Price+" more (y/n)");
+            String input = kboard.nextLine();
+            if (input.substring(0,1).equalsIgnoreCase("y")) {
+                itemSubtotal += opt1Price;
+                optionDone = true;
+            }
+            else if (input.substring(0,1).equalsIgnoreCase("n")) {
+                optionDone = true;
+            }
+            else {
+                System.out.println("Error: Invalid input");
+            }
+        }
+        
+    }
 }

@@ -5,4 +5,6 @@ comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 comment2.params=
 comment2.target=void\ menu()
-numComments=3
+comment3.params=itemName\ price\ opt1Name\ opt1Price\ opt2Name\ opt2Price
+comment3.target=void\ orderItem(java.lang.String,\ double,\ java.lang.String,\ double,\ java.lang.String,\ double)
+numComments=4
