@@ -32,9 +32,27 @@ public class PointOfSale
         if (input.equals("0")) {
             done = true;
         }
+        else if (input.equals("1")) {
+            subtotal += orderItem("Regular Coffee",7.99, "cream", 0.10,"sugar",0.15);
+        }
+        else if (input.equals("2")) {
+            subtotal += orderItem("Breakfast Croissant",5.99, "ham", 0.50,"cheese",0.25);
+        }
+        else if (input.equals("9")) {
+            //total the order
+            System.out.println("Subtotal: "+subtotal);
+            double tax = subtotal * 0.10;
+            System.out.println("Tax (10%): "+tax );
+            double total = subtotal + tax;
+            System.out.println("Total: "+total);
+            System.out.println("Please have the customer pay $"+total+". Thank you!");            
+        }
+        else {
+            System.out.println("Error: Invalid input");
+        }
     }
     
-    public static void orderItem(String itemName, double price, String opt1Name, double opt1Price, String opt2Name, double opt2Price) {
+    public static double orderItem(String itemName, double price, String opt1Name, double opt1Price, String opt2Name, double opt2Price) {
         double itemSubtotal = price;
         boolean optionDone = false;
         System.out.println(itemName+":");
@@ -67,5 +85,6 @@ public class PointOfSale
                 System.out.println("Error: Invalid input");
             }
         }
+        return itemSubtotal;
     }
 }
