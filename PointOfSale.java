@@ -52,6 +52,20 @@ public class PointOfSale
                 System.out.println("Error: Invalid input");
             }
         }
-        
+        optionDone = false;
+        while (!optionDone) {
+            System.out.println("Do you want "+opt2Name+" for $"+opt2Price+" more (y/n)");
+            String input = kboard.nextLine();
+            if (input.substring(0,1).equalsIgnoreCase("y")) {
+                itemSubtotal += opt2Price;
+                optionDone = true;
+            }
+            else if (input.substring(0,1).equalsIgnoreCase("n")) {
+                optionDone = true;
+            }
+            else {
+                System.out.println("Error: Invalid input");
+            }
+        }
     }
 }
